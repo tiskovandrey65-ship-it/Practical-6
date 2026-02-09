@@ -1,0 +1,25 @@
+temp_min = 36.0
+temp_max = 37.0
+pressure_min = 110
+pressure_max = 130
+pulse_min = 60
+pulse_max = 100
+
+temperature = float(input("Введите температуру:"))
+pressure = int(input("Введите Давление:"))
+pulse = int(input("Введите пульс:"))
+
+if (temperature < 35 or temperature > 38 or pressure < 105 or pressure > 140 or pulse < 55 or pulse > 110 ):
+    status = "Требуется врач"
+elif (temp_min <= temperature <= temp_max and  pressure_min <= pressure <= pressure_max  and  pulse_min <= pulse <= pulse_max):
+    status = "Нормальное состояние"
+
+elif (35 <= temperature < 36 or 37 < temperature <= 38 and 105 <= pressure < 100 or 130 < pressure < 140 and 55 <= pulse < 60 or 100 < pulse < 110):
+     status = "Лёгкое недомогание"
+else:
+    status = "Есть отклонения"
+
+print(f"Температура: {temperature}")
+print(f"Давление: {pressure}")
+print(f"Пульс: {pulse}")
+print(f"Состояние: {status}")
